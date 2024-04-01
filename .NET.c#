@@ -1,0 +1,6 @@
+using System.Linq;
+
+var filteredResults = dbContext.Users
+    .Where(user => user.IsActive)
+    .OrderBy(user => user.LastName)
+    .ToList();
