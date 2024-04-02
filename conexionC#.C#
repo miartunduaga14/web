@@ -1,0 +1,17 @@
+using System.Data.SqlClient;
+
+string connectionString = @"Data Source=localhost;Initial Catalog=myDatabase;Integrated Security=True";
+
+using(SqlConnection connection = new SqlConnection(connectionString))
+{
+    try
+    {
+        connection.Open();
+        Console.WriteLine("Connected to the database.");
+    }
+    catch (SqlException e)
+    {
+        Console.WriteLine("Could not connect to the database.");
+        Console.WriteLine(e.Message);
+    }
+}
